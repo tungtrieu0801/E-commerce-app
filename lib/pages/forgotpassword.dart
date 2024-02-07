@@ -1,3 +1,5 @@
+import 'package:ecommerceapp/pages/signup.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -9,6 +11,19 @@ class ForgotPassword extends StatefulWidget {
 
 class _ForgotPasswordState extends State<ForgotPassword> {
   TextEditingController mailController = new TextEditingController();
+
+  String email="";
+  final _formkey = GlobalKey<FormState>();
+  resetPassword () async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Password have been reset", style: TextStyle(fontSize: 18),)));
+    } on FirebaseAuthException catch (e) {
+      if(e.code == "user-not-found") {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("No user found for that email")));
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +58,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             ),
             Expanded(
                 child: Form(
+                  key: _formkey,
               child: Padding(
                 padding: EdgeInsets.only(left: 10),
                 child: ListView(
@@ -78,22 +94,43 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      width: 140,
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Send email",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
+                    GestureDetector(
+                      onTap: (){
+                        if(_formkey.currentState!.validate()){
+                          setState(() {
+                            email = mailController.text;
+                          });
+                          resetPassword();
+                        }
+                      },
+                      child: Container(
+                        width: 140,
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Send email",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+                      children: [
+                        Text("Don't have account?", style: TextStyle(fontSize: 18, color: Colors.white70),),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (contexy)=>Signup()));
+                          },
+                            child: Text("Create", style: TextStyle(color: Colors.red,fontSize: 20),)),
+                      ],
                     )
                   ],
                 ),
