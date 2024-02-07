@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/pages/forgotpassword.dart';
 import 'package:ecommerceapp/pages/signup.dart';
 import 'package:ecommerceapp/widget/widget_support.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -139,11 +140,16 @@ class _LoginState extends State<Login> {
                             SizedBox(
                               height: 20,
                             ),
-                            Container(
-                                alignment: Alignment.topRight,
-                                child: Text(
-                                  "Forgot password?",
-                                )),
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgotPassword()));
+                              },
+                              child: Container(
+                                  alignment: Alignment.topRight,
+                                  child: Text(
+                                    "Forgot password?",
+                                  )),
+                            ),
                             SizedBox(
                               height: 40,
                             ),
