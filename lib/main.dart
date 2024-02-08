@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/admin/admin_login.dart';
 import 'package:ecommerceapp/pages/bottom_navigation.dart';
 import 'package:ecommerceapp/pages/home.dart';
 import 'package:ecommerceapp/pages/login.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
 
-      home: Onboard(),
+      home: AdminLogin(),
     );
   }
 }
