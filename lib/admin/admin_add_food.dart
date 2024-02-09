@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:random_string/random_string.dart';
@@ -50,7 +50,7 @@ class _AddFoodState extends State<AddFood> {
         "Price": pricecontroller.text,
         "Detail": detailcontroller.text
       };
-      await DatabaseMethods().addFoodItem(addItem, value!).then((value) {
+      await DatabaseMethods().addUfoodItems(addItem, value!).then((value) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             backgroundColor: Colors.orangeAccent,
             content: Text(

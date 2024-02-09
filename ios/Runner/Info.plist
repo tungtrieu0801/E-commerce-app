@@ -26,6 +26,12 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>we required camera to connect a call</string>
+	<key>NSCameraUsageDescription</key>
+    <string>we required to connect a call</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>we requird to make a call</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>

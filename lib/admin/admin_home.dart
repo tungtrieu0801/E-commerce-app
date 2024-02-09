@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widget/widget_support.dart';
+import 'admin_add_food.dart';
 
 
 class HomeAdmin extends StatefulWidget {
@@ -22,7 +23,7 @@ class _HomeAdminState extends State<HomeAdmin> {
             SizedBox(height: 50.0,),
             GestureDetector(
               onTap: (){
-                // Navigator.push(context, MaterialPageRoute(builder: (context)=> AddFood()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> AddFood()));
               },
               child: Material(
                 elevation: 10.0,

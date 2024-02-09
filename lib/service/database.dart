@@ -8,10 +8,18 @@ class DatabaseMethods {
         .set(userInfoMap);
   }
 
-  UpdateUserWallet(String id, String amount ) async {
+  UpdateUserWallet(String id, String amount) async {
     return await FirebaseFirestore.instance
         .collection("users")
         .doc(id)
         .update({"Wallet": amount});
+  }
+
+  Future addUfoodItems(Map<String, dynamic> userInfoMap, String name) async {
+    return await FirebaseFirestore.instance.collection(name).add(userInfoMap);
+  }
+
+  Future<Stream<QuerySnapshot>> getFoodItem (String name) async {
+    return await FirebaseFirestore.instance.collection(name).snapshots();
   }
 }
