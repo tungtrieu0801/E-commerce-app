@@ -38,6 +38,4 @@ class DatabaseMethods {
         .collection("Cart")
         .snapshots();
   }
-
-
 }

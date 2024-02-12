@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:ecommerceapp/service/share_pref.dart';
 import 'package:ecommerceapp/widget/app_constant.dart';
 import 'package:ecommerceapp/widget/widget_support.dart';

@@ -1,16 +1,11 @@
-import 'package:ecommerceapp/admin/admin_home.dart';
-import 'package:ecommerceapp/admin/admin_login.dart';
-import 'package:ecommerceapp/pages/bottom_navigation.dart';
-import 'package:ecommerceapp/pages/home.dart';
 import 'package:ecommerceapp/pages/login.dart';
-import 'package:ecommerceapp/pages/onboard.dart';
-import 'package:ecommerceapp/pages/signup.dart';
+
 import 'package:ecommerceapp/widget/app_constant.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Stripe.publishableKey = publickey;
 
@@ -25,7 +20,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       home: Login(),
     );
   }

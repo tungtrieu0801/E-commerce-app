@@ -1,5 +1,3 @@
-
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerceapp/pages/detail.dart';
 import 'package:ecommerceapp/service/database.dart';
