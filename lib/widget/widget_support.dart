@@ -27,4 +27,13 @@ class AppWidget {
         fontFamily: 'Poppins'
     );
   }
+  static TextStyle bigText(){
+    return TextStyle(
+        color: Colors.black,
+        fontSize: 40.0,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'Poppins'
+    );
+  }
+
 }

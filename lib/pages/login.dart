@@ -72,12 +72,16 @@ class _LoginState extends State<Login> {
             Container(
               margin: EdgeInsets.only(top: 50, left: 20, right: 20),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Center(
-                    child: Image.asset(
-                      'images/logo.png',
-                      width: MediaQuery.of(context).size.width / 1.5,
-                      fit: BoxFit.cover,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 28.0),
+                      child: Image.asset(
+                        'images/logo.png',
+                        width: MediaQuery.of(context).size.width / 1.5,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -102,7 +106,7 @@ class _LoginState extends State<Login> {
                             ),
                             Text(
                               "Login",
-                              style: AppWidget.headlineTextFieldStyle(),
+                              style: AppWidget.bigText(),
                             ),
                             SizedBox(
                               height: 60,
@@ -186,9 +190,6 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(context,
@@ -199,6 +200,10 @@ class _LoginState extends State<Login> {
                       style: AppWidget.boldTextFieldStyle(),
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: Text("Develop by Tung"),
+                  )
                 ],
               ),
             )
