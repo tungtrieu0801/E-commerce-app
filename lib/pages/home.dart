@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                           elevation: 5.0,
                           borderRadius: BorderRadius.circular(15),
                           child: Container(
-                            padding: EdgeInsets.all(15),
+                            padding: EdgeInsets.all(10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -169,55 +169,57 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 50.0, left: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Hello Tung, ',
-                  style: AppWidget.boldTextFieldStyle(),
-                ),
-                Container(
-                  margin: EdgeInsets.only(right: 20),
-                  padding: EdgeInsets.all(3),
-                  decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Icon(
-                    Icons.shopping_cart,
-                    color: Colors.white,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Hello Tung, ',
+                    style: AppWidget.boldTextFieldStyle(),
                   ),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              'Delicious Food',
-              style: AppWidget.headlineTextFieldStyle(),
-            ),
-            Text(
-              'Discover and Get great Food',
-              style: AppWidget.lightTextFieldStyle(),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(margin: EdgeInsets.only(right: 20), child: showItem()),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-                height: 290,
-                child: allIteams()),
-            SizedBox(
-              height: 20,
-            ),
-            allIteamsVertical(),
-          ],
+                  Container(
+                    margin: EdgeInsets.only(right: 20),
+                    padding: EdgeInsets.all(3),
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Icon(
+                      Icons.shopping_cart,
+                      color: Colors.white,
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                'Delicious Food',
+                style: AppWidget.headlineTextFieldStyle(),
+              ),
+              Text(
+                'Discover and Get great Food',
+                style: AppWidget.lightTextFieldStyle(),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(margin: EdgeInsets.only(right: 20), child: showItem()),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                  height: 290,
+                  child: allIteams()),
+              SizedBox(
+                height: 20,
+              ),
+              allIteamsVertical(),
+            ],
+          ),
         ),
       ),
     );

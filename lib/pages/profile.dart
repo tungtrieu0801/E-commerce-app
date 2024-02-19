@@ -97,7 +97,7 @@ class _ProfileState extends State<Profile> {
                                       },
                                       child: profile == null
                                           ? Image.asset(
-                                              "images/boy.jpg",
+                                              "images/food.jpg",
                                               width: 120,
                                               height: 120,
                                               fit: BoxFit.cover,
