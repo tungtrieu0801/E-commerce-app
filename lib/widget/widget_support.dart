@@ -36,4 +36,13 @@ class AppWidget {
     );
   }
 
+  static TextStyle normalText(){
+    return TextStyle(
+        color: Colors.black,
+        fontSize: 29.0,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'Poppins'
+    );
+  }
+
 }
